@@ -1,0 +1,51 @@
+header {
+    background-color: white;
+}
+
+.logo_image {
+    width: 150px;
+    height: 150px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width:1200px) {
+    .logo_image {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.bg-body-tertiary {
+    background-color: #FF85B1 !important;
+
+}
+
+.navbar-nav {
+    --bs-nav-link-color: none;
+}
+
+.active {
+    display: inline-block;
+    color: aliceblue !important;
+    border-bottom: 3px solid white;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    color: white;
+}
+
+@media (min-width:992px) {
+    .navbar-expand-lg .navbar-nav {
+        gap: 150px;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        justify-content: space-evenly;
+        font-size: 1.3rem;
+    }
+}

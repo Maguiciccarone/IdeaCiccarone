@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "BebasNeue";
+    src: url(../fonts/bebasneueregular.ttf);
+}
+body {
+    font-family: "BebasNeue";
+    color: #405363 !important;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #405363;
+    font-size: .8rem;
+}
+
+a:hover {
+    color: aliceblue;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    margin: 10px 40px;
+}
+
+div article h3 {
+    text-align: center;
+    font-size: 1rem;
+}
