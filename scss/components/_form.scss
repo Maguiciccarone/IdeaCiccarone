@@ -1,0 +1,89 @@
+.form-container {
+    display: grid;
+    grid-template-columns: 300px;
+    justify-content: space-evenly;
+}
+
+.form-container input {
+    width: 150px;
+    height: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.email-input {
+    width: 220px !important;
+}
+
+.icon-contact {
+    width: 30px;
+    margin-right: 10px;
+    align-items: baseline;
+
+}
+
+.mensaje {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    justify-content: center;
+    text-align: center;
+}
+
+.mensaje textarea {
+    margin-left: 10px;
+    width: 230px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.send-box {
+    text-align: center;
+}
+
+.send-btn {
+    margin-top: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #405363;
+    color: white;
+    padding: 5px 20px;
+}
+
+.map {
+    margin: 20px 0 0 0;
+}
+
+@media (min-width:1200px) {
+    .form-container {
+        display: grid;
+        grid-template-columns: repeat(2, 500px);
+        grid-template-rows: repeat(4, 100px);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-container input {
+        width: 350px;
+        height: 40px;
+    }
+
+    .email-input {
+        width: 380px !important;
+    }
+
+    .mensaje {
+        grid-column: span 2;
+        grid-row: span 2;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .mensaje textarea {
+        width: 850px;
+    }
+
+    .send-box {
+        grid-column: span 2;
+        text-align: center;
+    }
+}
