@@ -120,6 +120,9 @@ header {
   border: 10px solid #FF85B1;
   align-items: center;
 }
+.tarjeta:hover {
+  transform: scale(1.1);
+}
 
 .tarjeta:hover {
   border: 20px solid #FFADCD;
@@ -291,6 +294,9 @@ header {
 .product_card p {
   text-align: justify;
   font-size: 0.8rem;
+}
+.product_card:hover {
+  transform: scale(1.1);
 }
 
 @media (min-width: 1200px) {
