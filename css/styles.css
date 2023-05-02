@@ -35,6 +35,8 @@ h1 {
 
 h2 {
   margin: 10px 40px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 div article h3 {
@@ -100,7 +102,7 @@ header {
     margin-bottom: 60px;
   }
 }
-.card {
+.cards-container {
   display: grid;
   grid-template-columns: 350px;
   grid-template-rows: repeat(3, 400px);
@@ -108,7 +110,8 @@ header {
   justify-items: center;
   text-align: center;
 }
-.card_box {
+
+.tarjeta {
   margin-top: 20px;
   margin-bottom: 15px;
   width: 300px;
@@ -117,17 +120,18 @@ header {
   border: 10px solid #FF85B1;
   align-items: center;
 }
-.card_box:hover {
+
+.tarjeta:hover {
   border: 20px solid #FFADCD;
 }
 
-.card_box_img {
+.tarjeta-img {
   width: 100%;
   margin-bottom: 10px;
 }
 
 @media (min-width: 1200px) {
-  .card {
+  .cards-container {
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
@@ -135,14 +139,14 @@ header {
     margin-right: 30px;
     padding-bottom: 50px;
   }
-  .card_box {
+  .tarjeta {
     margin-bottom: 50px;
     width: 350px;
     height: 350px;
     padding: 50px;
     border: 20px solid #FF85B1;
   }
-  .card_box_img {
+  .tarjeta-img {
     margin-bottom: 20px;
   }
 }
