@@ -1,17 +1,16 @@
 header {
-    background-color: white;
-}
-
-.logo_image {
-    width: 150px;
-    height: 150px;
+    background-color: $color-cuaternario;
 }
 
 .logo {
     display: flex;
     justify-content: center;
-}
 
+    &_image{
+        width: 150px;
+        height: 150px;
+    }
+    }
 @media (min-width:1200px) {
     .logo_image {
         width: 300px;
@@ -20,7 +19,7 @@ header {
 }
 
 .bg-body-tertiary {
-    background-color: #FF85B1 !important;
+    background-color: $color-secundario !important;
 
 }
 
@@ -31,7 +30,7 @@ header {
 .active {
     display: inline-block;
     color: aliceblue !important;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid $color-cuaternario;
 }
 
 .nav-link:focus,

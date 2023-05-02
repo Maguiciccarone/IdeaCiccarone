@@ -1,43 +1,43 @@
 .footer {
-    background-color: #FF85B1;
+    background-color: $color-secundario;
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
-}
 
-.footer ul {
-    padding: 0;
-}
+    & ul {
+        padding: 0;
+    }
 
-footer h3 {
-    font-size: 1.1rem;
-}
+    & h3 {
+        font-size: 1.1rem;
+    }
 
-footer a {
-    font-size: .8rem;
-}
+    & a {
+        font-size: .8rem;
+    }
 
-footer p {
-    font-size: .5rem;
-}
+    & p {
+        font-size: .5rem;
+    }
 
-.footerbox {
-    padding: 0 30px 0 30px;
-    display: grid;
-    grid-template-columns: 90vw;
-    justify-content: space-evenly;
-    align-items: baseline;
-    text-align: center;
-}
+    &_box {
+        padding: 0 30px 0 30px;
+        display: grid;
+        grid-template-columns: 90vw;
+        justify-content: space-evenly;
+        align-items: baseline;
+        text-align: center;
 
-.boxcenter {
-    margin-bottom: 20px;
-    border-top: 1px solid #405363;
-    border-bottom: 1px solid #405363;
-}
+        &_center {
+            margin-bottom: 20px;
+            border-top: 1px solid $color-primario;
+            border-bottom: 1px solid $color-primario;
+        }
 
-.boxcenter h3 {
-    margin-top: 20px;
+        &_center h3 {
+            margin-top: 20px;
+        }
+    }
 }
 
 .redessociales {
@@ -46,26 +46,30 @@ footer p {
 }
 
 @media (min-width: 1200px) {
-    .footerbox {
-        display: flex;
-    }
-    footer h3{
-        font-size: 1.5rem;
-        padding-bottom: 5px;
-    }
-    footer a{
-        font-size: 1rem;
-    }
+    .footer {
+        & h3 {
+            font-size: 1.5rem;
+            padding-bottom: 5px;
+        }
 
-    .boxcenter {
-        padding: 0 80px 0 80px;
-        border-left: 1px solid #405363;
-        border-right: 1px solid #405363;
-        border-top: none;
-        border-bottom: none;
-    }
+        & a {
+            font-size: 1rem;
+        }
 
-    .footer p {
-        font-size: 1rem;
+        & p {
+            font-size: 1rem;
+        }
+
+        &_box {
+            display: flex;
+
+            &_center {
+                padding: 0 80px 0 80px;
+                border-left: 1px solid $color-primario;
+                border-right: 1px solid $color-primario;
+                border-top: none;
+                border-bottom: none;
+            }
+        }
     }
 }
