@@ -30,13 +30,13 @@ ul {
 
 h1 {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 h2 {
   margin: 10px 40px;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 div article h3 {
@@ -92,13 +92,13 @@ header {
   }
 }
 .carousel-inner {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
 @media (min-width: 992px) {
   .carousel-inner {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 60px;
   }
 }
@@ -159,6 +159,10 @@ header {
   border: 1px solid #405363;
   border-radius: 10px;
   padding: 8px 10px;
+}
+
+.btn:hover {
+  border: 1px solid #405363;
 }
 
 .footer {
