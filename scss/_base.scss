@@ -1,4 +1,4 @@
-$color-primario:#405363;
+$color-primario: #405363;
 $color-secundario: #FF85B1;
 $color-terciario: #FFADCD;
 $color-cuaternario: white;
@@ -13,6 +13,7 @@ $color-cuaternario: white;
     font-family: "BebasNeue";
     src: url(../fonts/bebasneueregular.ttf);
 }
+
 body {
     font-family: "BebasNeue";
     color: $color-primario !important;
@@ -36,7 +37,7 @@ ul {
 h1 {
     text-align: center;
     margin-top: 50px;
-    
+
 }
 
 h2 {
@@ -48,5 +49,23 @@ h2 {
 
 div article h3 {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+}
+
+footer {
+    & ul {
+        padding: 0;
+    }
+
+    & h3 {
+        font-size: 1.1rem;
+    }
+
+    & a {
+        font-size: .8rem;
+    }
+
+    & p {
+        font-size: .5rem;
+    }
 }

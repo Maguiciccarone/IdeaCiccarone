@@ -1,15 +1,17 @@
-.form-container {
+.form_container {
     display: grid;
     grid-template-columns: 300px;
     justify-content: space-evenly;
 
-    & input{
+
+    &_items input {
+        background-color: rgb(237, 237, 237);
         width: 150px;
         height: 20px;
         padding: 10px;
         border-radius: 5px;
     }
-    }
+}
 
 .email-input {
     width: 220px !important;
@@ -27,7 +29,9 @@
     margin-bottom: 5px;
     justify-content: center;
     text-align: center;
-    & textarea{
+
+    & textarea {
+        background-color: rgb(237, 237, 237);
         margin-left: 10px;
         width: 230px;
         padding: 10px;
@@ -53,14 +57,54 @@
     margin: 20px 0 0 0;
 }
 
-@media (min-width:1200px) {
-    .form-container {
+@media (min-width:768px) and (max-width:1023px) {
+    .form_container {
+        display: grid;
+        grid-template-columns: repeat(2, 350px);
+        grid-template-rows: repeat(4, 70px);
+        justify-content: center;
+        align-items: center;
+
+        &_items input {
+            background-color: rgb(237, 237, 237);
+            width: 200px;
+            height: 20px;
+
+        }
+    }
+
+    .email-input {
+        width: 250px !important;
+    }
+
+    .mensaje {
+        grid-column: span 2;
+        grid-row: span 2;
+        font-size: 1rem;
+        text-align: center;
+
+        & textarea {
+            background-color: rgb(237, 237, 237);
+            width: 600px;
+        }
+    }
+
+    .send-box {
+        grid-column: span 2;
+        text-align: center;
+    }
+}
+
+@media (min-width:1024px) {
+    .form_container {
         display: grid;
         grid-template-columns: repeat(2, 500px);
         grid-template-rows: repeat(4, 100px);
         justify-content: center;
         align-items: center;
-        & input{
+
+        &_items input {
+            background-color: rgb(237, 237, 237);
             width: 350px;
             height: 40px;
         }
@@ -75,7 +119,9 @@
         grid-row: span 2;
         font-size: 1.5rem;
         text-align: center;
-        & textarea{
+
+        & textarea {
+            background-color: rgb(237, 237, 237);
             width: 850px;
         }
     }

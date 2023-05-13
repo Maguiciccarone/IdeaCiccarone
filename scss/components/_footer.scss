@@ -4,21 +4,6 @@
     padding: 20px 0;
     font-size: 1rem;
 
-    & ul {
-        padding: 0;
-    }
-
-    & h3 {
-        font-size: 1.1rem;
-    }
-
-    & a {
-        font-size: .8rem;
-    }
-
-    & p {
-        font-size: .5rem;
-    }
 
     &_box {
         padding: 0 30px 0 30px;
@@ -28,14 +13,17 @@
         align-items: baseline;
         text-align: center;
 
-        &_center {
+        &_items {
             margin-bottom: 20px;
-            border-top: 1px solid $color-primario;
-            border-bottom: 1px solid $color-primario;
-        }
 
-        &_center h3 {
-            margin-top: 20px;
+            &_center {
+                border-top: 1px solid $color-primario;
+                border-bottom: 1px solid $color-primario;
+            }
+
+            &_center h3 {
+                margin-top: 20px;
+            }
         }
     }
 }
@@ -63,13 +51,17 @@
         &_box {
             display: flex;
 
-            &_center {
+            &_items {
                 padding: 0 80px 0 80px;
-                border-left: 1px solid $color-primario;
-                border-right: 1px solid $color-primario;
                 border-top: none;
                 border-bottom: none;
+
+                &_center {
+                    border-left: 1px solid $color-primario;
+                    border-right: 1px solid $color-primario;
+                }
             }
+
         }
     }
 }

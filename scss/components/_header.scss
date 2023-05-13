@@ -6,11 +6,12 @@ header {
     display: flex;
     justify-content: center;
 
-    &_image{
+    &_image {
         width: 150px;
         height: 150px;
     }
-    }
+}
+
 @media (min-width:1200px) {
     .logo_image {
         width: 300px;
@@ -40,7 +41,7 @@ header {
 
 @media (min-width:992px) {
     .navbar-expand-lg .navbar-nav {
-        gap: 150px;
+        gap: 140px;
     }
 
     .navbar-expand-lg .navbar-collapse {
