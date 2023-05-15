@@ -62,6 +62,8 @@ header {
   background-color: white;
 }
 
+/* index section */
+
 .logo {
   display: flex;
   justify-content: center;
@@ -253,6 +255,9 @@ div article h3 {
     border-right: 1px solid #405363;
   }
 }
+
+/* aboutus section */
+
 .aboutus {
   display: grid;
   grid-template-columns: 300px;
@@ -332,6 +337,9 @@ div article h3 {
     height: 500px;
   }
 }
+
+/* product section */
+
 .product {
   display: grid;
   grid-template-columns: 280px;
@@ -405,6 +413,8 @@ div article h3 {
   font-size: 1.7rem;
 }
 
+/* gallery section */
+
 .gallery-container {
   display: flex;
   flex-direction: column;
@@ -429,6 +439,9 @@ div article h3 {
     grid-column: span 2;
   }
 }
+
+/* contact section */
+
 .form_container {
   display: grid;
   grid-template-columns: 300px;
