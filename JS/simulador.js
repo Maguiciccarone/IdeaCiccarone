@@ -1,4 +1,3 @@
-
 const precioEnvio = 1500;
 
 alert("Bienvenidos a Meraki, nuestros productos son:")
