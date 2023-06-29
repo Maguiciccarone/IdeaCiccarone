@@ -1,4 +1,4 @@
-const precioEnvio = 1500;
+const precioEnvio = 1700;
 
 alert("Bienvenidos a Meraki, nuestros productos son:")
 
