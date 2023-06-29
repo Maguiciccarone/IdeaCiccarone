@@ -1,9 +1,7 @@
-console.log("esta conectado");
 
 const precioEnvio = 1500;
 
 alert("Bienvenidos a Meraki, nuestros productos son:")
-
 
 let productos = ["agenda pocket", "agenda semanal", "agenda diaria", "agenda docente"];
 
@@ -12,50 +10,50 @@ let producto1 = { numeroProducto: 1, nombre: "agenda semanal", precio: 2500 };
 let producto2 = { numeroProducto: 2, nombre: "agenda diaria", precio: 3000 };
 let producto3 = { numeroProducto: 3, nombre: "agenda docente", precio: 3500 };
 
-for (producto in productos) {
-    let i = producto;
-    alert(i + ") " + productos[producto]);
-}
+productos.forEach((producto, i) => {
+    alert(i + ") " + producto);
+});
 
-let consultaUsuario = prompt(`Ingrese el numero del producto deseado:`);
+let consultaUsuario = prompt(`Ingrese el número del producto deseado:`);
 
-if (consultaUsuario == 0) {
-    let respuestaEnvio = prompt(`Elegiste ${producto0["nombre"]} y su precio es ${producto0["precio"]}. Queres sumarle ${precioEnvio} de envio? (si o no)`);
-    if (respuestaEnvio === "si") {
-        let costoTotal = sumarEnvio(producto0["precio"]);
-        alert("el precio final es de " + costoTotal + " con envio incluido");
-    } else {
-        alert("el precio final es de " + producto0["precio"] + " coordina la entrega con el vendedor");
+if (consultaUsuario >= 0 && consultaUsuario < productos.length) {
+    let productoSeleccionado;
+    if (consultaUsuario == 0) {
+        productoSeleccionado = producto0;
+    } else if (consultaUsuario == 1) {
+        productoSeleccionado = producto1;
+    } else if (consultaUsuario == 2) {
+        productoSeleccionado = producto2;
+    } else if (consultaUsuario == 3) {
+        productoSeleccionado = producto3;
     }
-} else if (consultaUsuario == 1) {
-    let respuestaEnvio = prompt(`Elegiste ${producto1["nombre"]} y su precio es ${producto1["precio"]}. Queres sumarle ${precioEnvio} de envio? (si o no)`);
+
+    let respuestaEnvio = prompt(`Elegiste ${productoSeleccionado.nombre} y su precio es ${productoSeleccionado.precio}. ¿Quieres sumarle ${precioEnvio} de envío? (si o no)`);
+
     if (respuestaEnvio === "si") {
-        let costoTotal = sumarEnvio(producto1["precio"]);
-        alert("el precio final es de " + costoTotal + " con envio incluido");
+        let costoTotal = sumarEnvio(productoSeleccionado.precio);
+        alert("El precio final es de " + costoTotal + " con envío incluido");
     } else {
-        alert("el precio final es de " + producto1["precio"] + " coordina la entrega con el vendedor");
-    }
-} else if (consultaUsuario == 2) {
-    let respuestaEnvio = prompt(`Elegiste ${producto2["nombre"]} y su precio es ${producto2["precio"]}. Queres sumarle ${precioEnvio} de envio? (si o no)`);
-    if (respuestaEnvio === "si") {
-        let costoTotal = sumarEnvio(producto2["precio"]);
-        alert("el precio final es de " + costoTotal + " con envio incluido");
-    } else {
-        alert("el precio final es de " + producto2["precio"] + " coordina la entrega con el vendedor");
-    }
-} else if (consultaUsuario == 3) {
-    let respuestaEnvio = prompt(`Elegiste ${producto3["nombre"]} y su precio es ${producto3["precio"]}. Queres sumarle ${precioEnvio} de envio? (si o no)`);
-    if (respuestaEnvio === "si") {
-        let costoTotal = sumarEnvio(producto3["precio"]);
-        alert("el precio final es de " + costoTotal + " con envio incluido");
-    } else {
-        alert("el precio final es de " + producto3["precio"] + " coordina la entrega con el vendedor");
+        alert("El precio final es de " + productoSeleccionado.precio + " Coordiná la entrega con el vendedor");
     }
 } else {
-    alert("ingresaste un número inválido");
+    alert("Ingresaste un número inválido");
 }
 
 function sumarEnvio(precio) {
-    costoTotal = precio + precioEnvio;
+    let costoTotal = precio + precioEnvio;
     return costoTotal;
 }
+
+function procesarProducto(numeroProducto, nombre, precio) {
+    let productoSeleccionado = { numeroProducto, nombre, precio };
+    let respuestaEnvio = prompt(`Elegiste ${nombre} y su precio es ${precio}. ¿Quieres sumarle ${precioEnvio} de envío? (si o no)`);
+
+    if (respuestaEnvio === "si") {
+        let costoTotal = sumarEnvio(precio);
+        alert("El precio final es de " + costoTotal + " con envío incluido");
+    } else {
+        alert("El precio final es de " + precio + " Coordiná la entrega con el vendedor");
+    }
+}
+
