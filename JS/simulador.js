@@ -1,12 +1,4 @@
-
-let producto;
-let productoStorage = JSON.parse(localStorage.getItem('carrito'));
-
-if (!productoStorage) {
-  //No mostrar el modal del carrito de compra
-} else {
-  alert("Todavia no terminaste tu compra");
-}
+document.addEventListener('DOMContentLoaded', function() {
 class Producto {
   constructor(id, nombre, precio, description, img) {
     this.id = id;
@@ -28,19 +20,21 @@ const productos = [
   new Producto(8, 'Cuaderno pediátrico', 3000, 'Cuaderno tapa dura, tamaño A5. Incluye tapa personalizada. Contiene consultas pediátricas, citas, control de crecimiento y vacunas, tratamientos y medicación, notas.', '../img/cuadernopediatrico.jpg'),
 ];
 
-const productContainer = document.querySelector('#product-container');
+
+const productContainer = document.querySelector('#product_container_');
 
 productos.forEach(producto => {
   const productDiv = document.createElement('div');
   productDiv.classList.add('producto');
-
+  productDiv.style.backgroundColor = '#FFFFFF';
+    //innerHTML
   productDiv.innerHTML = `
-    <div class="product_card">
-    <img src="${producto.img}" class="tarjeta-img">
+    <div class='product_card'>
+    <img src='${producto.img}' class='tarjeta-img'>
     <h3>${producto.nombre}</h3>
-    <p class="text-size">${producto.description}</p>
-    <p class="text-center">precio: $${producto.precio}</p>
-    <button class="btn">Agregar al carrito</button>
+    <p class='text-size'>${producto.description}</p>
+    <p class='text-center'>precio: $${producto.precio}</p>
+    <button class='btn'>Agregar al carrito</button>
     </div>
     `;
 
@@ -57,7 +51,40 @@ productos.forEach(producto => {
   });
 
 })
+});
 
+document.addEventListener('DOMContentLoaded', function() {
+let form = document.getElementById("myForm");
+let submitButton = document.getElementById("submitButton");
 
+submitButton.addEventListener("click", function (e) {
+  e.preventDefault();
 
+  let nombreInput = document.getElementById("name");
+  let emailInput = document.getElementById("email");
+  let mensajeInput = document.getElementById("mensaje");
+
+  let nombre = nombreInput.value;
+  let email = emailInput.value;
+  let mensaje = mensajeInput.value;
+
+  if (nombre.length < 4) {
+    alert("el nombre debe contener mas de 4 caracteres");
+    nombreInput.focus();
+  }
+
+  let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  if (emailRegex.test(email)) {
+  } else {
+    alert("no es un correo valido");
+    emailInput.focus();
+  }
+
+  if (mensaje.length < 6) {
+    alert("el mensaje debe contener mas de 6 caracteres");
+    mensajeInput.focus();
+  }
+});
+
+});
 
