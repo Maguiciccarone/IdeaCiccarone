@@ -1,58 +1,63 @@
-const precioEnvio = 1500;
 
-alert("Bienvenidos a Meraki, nuestros productos son:")
+let producto;
+let productoStorage = JSON.parse(localStorage.getItem('carrito'));
 
-let productos = ["agenda pocket", "agenda semanal", "agenda diaria", "agenda docente"];
-
-let producto0 = { numeroProducto: 0, nombre: "agenda pocket", precio: 2000 };
-let producto1 = { numeroProducto: 1, nombre: "agenda semanal", precio: 2500 };
-let producto2 = { numeroProducto: 2, nombre: "agenda diaria", precio: 3000 };
-let producto3 = { numeroProducto: 3, nombre: "agenda docente", precio: 3500 };
-
-productos.forEach((producto, i) => {
-    alert(i + ") " + producto);
-});
-
-let consultaUsuario = prompt(`Ingrese el número del producto deseado:`);
-
-if (consultaUsuario >= 0 && consultaUsuario < productos.length) {
-    let productoSeleccionado;
-    if (consultaUsuario == 0) {
-        productoSeleccionado = producto0;
-    } else if (consultaUsuario == 1) {
-        productoSeleccionado = producto1;
-    } else if (consultaUsuario == 2) {
-        productoSeleccionado = producto2;
-    } else if (consultaUsuario == 3) {
-        productoSeleccionado = producto3;
-    }
-
-    let respuestaEnvio = prompt(`Elegiste ${productoSeleccionado.nombre} y su precio es ${productoSeleccionado.precio}. ¿Quieres sumarle ${precioEnvio} de envío? (si o no)`);
-
-    if (respuestaEnvio === "si") {
-        let costoTotal = sumarEnvio(productoSeleccionado.precio);
-        alert("El precio final es de " + costoTotal + " con envío incluido");
-    } else {
-        alert("El precio final es de " + productoSeleccionado.precio + " Coordiná la entrega con el vendedor");
-    }
+if (!productoStorage) {
+  //No mostrar el modal del carrito de compra
 } else {
-    alert("Ingresaste un número inválido");
+  alert("Todavia no terminaste tu compra");
+}
+class Producto {
+  constructor(id, nombre, precio, description, img) {
+    this.id = id;
+    this.nombre = nombre;
+    this.precio = precio;
+    this.description = description;
+    this.img = img;
+  }
 }
 
-function sumarEnvio(precio) {
-    let costoTotal = precio + precioEnvio;
-    return costoTotal;
-}
+const productos = [
+  new Producto(1, 'Agenda diaria', 4000, 'Agenda con diagramación diaria. Contiene planner mes a mes, calendario, sección de notas y sobre para guardar papeles.', '../img/diaria.jpg'),
+  new Producto(2, 'Agenda semanal', 3500, 'Agenda con vista semanal tamaño A5. Incluye tapa personalizada. Contiene planner mes a mes, calendario, sección de notas y sobre para guardar papeles importantes.', '../img/semanal.jpg'),
+  new Producto(3, 'Agenda pocket', 3000, 'Agenda tamaño A6. Incluye tapa personalizada. Contiene calendario, vista semanal sin horario, sección de notas y contactos.', '../img/pocket.jpg'),
+  new Producto(4, 'Agenda docente', 4000, 'Agenda tamaño A5. Incluye tapa personalizada. Contiene calendario, planner, horarios, escuelas, sección para tomar asistencia hasta cuarenta alumnos, y calificiaciones.', '../img/docente.jpg'),
+  new Producto(5, 'Cuaderno rayado', 3000, 'Cuaderno tamaño A5 tapa dura. Incluye tapa personalizada. Contiene 50 hojas rayadas en papel bookcel de 80gr., color ahuesado para cuidar la visión.', '../img/rayado.jpg'),
+  new Producto(6, 'Cuaderno cuadriculado', 3000, 'Cuaderno tamaño A5 tapa dura. Incluye tapa personalizada. Contiene 50 hojas cuadriculadas en papel bookcel de 80 gr., color ahuesadopara cuidar la visión.', '../img/cuariculado.jpg'),
+  new Producto(7, 'Cuaderno liso', 3000, 'Cuaderno tamaño A5 tapa dura. Incluye tapa personalizada. Contiene 50 hojas lisas en papel bookcel de 80 gr., color ahuesado para cuidar la visión.', '../img/liso.jpg'),
+  new Producto(8, 'Cuaderno pediátrico', 3000, 'Cuaderno tapa dura, tamaño A5. Incluye tapa personalizada. Contiene consultas pediátricas, citas, control de crecimiento y vacunas, tratamientos y medicación, notas.', '../img/cuadernopediatrico.jpg'),
+];
 
-function procesarProducto(numeroProducto, nombre, precio) {
-    let productoSeleccionado = { numeroProducto, nombre, precio };
-    let respuestaEnvio = prompt(`Elegiste ${nombre} y su precio es ${precio}. ¿Quieres sumarle ${precioEnvio} de envío? (si o no)`);
+const productContainer = document.querySelector('#product-container');
 
-    if (respuestaEnvio === "si") {
-        let costoTotal = sumarEnvio(precio);
-        alert("El precio final es de " + costoTotal + " con envío incluido");
-    } else {
-        alert("El precio final es de " + precio + " Coordiná la entrega con el vendedor");
-    }
-}
+productos.forEach(producto => {
+  const productDiv = document.createElement('div');
+  productDiv.classList.add('producto');
+
+  productDiv.innerHTML = `
+    <div class="product_card">
+    <img src="${producto.img}" class="tarjeta-img">
+    <h3>${producto.nombre}</h3>
+    <p class="text-size">${producto.description}</p>
+    <p class="text-center">precio: $${producto.precio}</p>
+    <button class="btn">Agregar al carrito</button>
+    </div>
+    `;
+
+  productContainer.appendChild(productDiv);
+
+  const addButton = productDiv.querySelector('.btn');
+
+  addButton.addEventListener('click', () => {
+    console.log('se agrego al carrito', producto);
+
+    let jsonParseProduct = JSON.stringify(producto)
+
+    localStorage.setItem('carrito', jsonParseProduct);
+  });
+
+})
+
+
+
 
