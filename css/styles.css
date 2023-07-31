@@ -214,6 +214,15 @@ div article h3 {
   padding: 5px 10px;
 }
 
+.btnEliminar {
+  width: 100%;
+  background-color: #f85a94;
+  border: 1px solid #405363;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
 .btn:hover {
   border: 1px solid #405363;
 }
@@ -470,6 +479,14 @@ div article h3 {
   text-align: center;
 }
 
+.carrito{
+  font-size: 30px;
+  color: darkslategray;
+}
+
+.carrito:hover{
+  color:white;
+}
 
 /* gallery section */
 

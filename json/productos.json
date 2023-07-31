@@ -1,0 +1,59 @@
+{"productos" : [
+  {
+    "id":1,
+    "nombre": "Agenda diaria",
+    "precio": 4000,
+    "descripcion": "Agenda con diagramación diaria. Contiene planner mes a mes, calendario, sección de notas y sobre para guardar papeles.",
+    "imagen": "../img/diaria.jpg"
+  },
+  {
+    "id":2,
+    "nombre": "Agenda semanal",
+    "precio": 3500,
+    "descripcion": "Agenda con vista semanal tamaño A5. Incluye tapa personalizada. Contiene planner mes a mes, calendario, sección de notas y sobre para guardar papeles importantes.",
+    "imagen": "../img/semanal.jpg"
+  },
+  {
+    "id":3,
+    "nombre": "Agenda pocket",
+    "precio": 3500,
+    "descripcion": "Agenda con vista semanal tamaño A5. Incluye tapa personalizada. Contiene planner mes a mes, calendario, sección de notas y sobre para guardar papeles importantes.",
+    "imagen": "../img/pocket.jpg"
+  },
+  {
+    "id":4,
+    "nombre": "Agenda docente",
+    "precio": 4000,
+    "descripcion": "Agenda tamaño A5. Incluye tapa personalizada. Contiene calendario, planner, horarios, escuelas, sección para tomar asistencia hasta cuarenta alumnos, y calificiaciones.",
+    "imagen": "../img/docente.jpg"
+  },
+  {
+    "id":5,
+    "nombre": "Cuaderno rayado",
+    "precio": 3000,
+    "descripcion": "Cuaderno tamaño A5 tapa dura. Incluye tapa personalizada. Contiene 50 hojas rayadas en papel bookcel de 80gr., color ahuesado para cuidar la visión.",
+    "imagen": "../img/rayado.jpg"
+  },
+  {
+    "id":6,
+    "nombre": "Cuaderno cuadriculado",
+    "precio": 3000,
+    "descripcion": "Cuaderno tamaño A5 tapa dura. Incluye tapa personalizada. Contiene 50 hojas cuadriculadas en papel bookcel de 80 gr., color ahuesadopara cuidar la visión.",
+    "imagen": "../img/cuariculado.jpg"
+  },
+  {
+    "id":7,
+    "nombre": "Cuaderno liso",
+    "precio": 3000,
+    "descripcion": "Cuaderno tamaño A5 tapa dura. Incluye tapa personalizada. Contiene 50 hojas lisas en papel bookcel de 80 gr., color ahuesado para cuidar la visión.",
+    "imagen": "../img/liso.jpg"
+  },
+  {
+    "id":8,
+    "nombre": "Cuaderno pediátrico",
+    "precio": 3000,
+    "descripcion": "Cuaderno tapa dura, tamaño A5. Incluye tapa personalizada. Contiene consultas pediátricas, citas, control de crecimiento y vacunas, tratamientos y medicación, notas.",
+    "imagen": "../img/cuadernopediatrico.jpg"
+  }
+]
+}
