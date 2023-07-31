@@ -471,21 +471,21 @@ div article h3 {
 }
 
 .text-size {
- height:120px;
- 
+  height: 120px;
+
 }
 
 .text-center {
   text-align: center;
 }
 
-.carrito{
+.carrito {
   font-size: 30px;
   color: darkslategray;
 }
 
-.carrito:hover{
-  color:white;
+.carrito:hover {
+  color: white;
 }
 
 /* gallery section */
