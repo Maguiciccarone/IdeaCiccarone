@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }).showToast(): "";
   
       // validacion para ejecutar el formulario
-      if(nombre.length >4 && emailRegex.test(email) == true && mensaje.length >6){
+      if(nombre.length >= 4 && emailRegex.test(email) == true && mensaje.length >6){
         Swal.fire({
           icon: 'success',
           title: 'Mensaje enviado!',

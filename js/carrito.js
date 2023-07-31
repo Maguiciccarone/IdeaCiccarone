@@ -2,21 +2,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let carrito = [];
 
-
   const productContainer = document.querySelector('#product_container_');
+  const compraFinal = document.getElementById('finalizar_compra');
 
   async function getProductsMeraki() {
     try {
       const response = await fetch('../json/productos.json');
       const data = await response.json();
-  
+
       const productos = data.productos;
-  
+
       productos.forEach(producto => {
         const productDiv = document.createElement('div');
         productDiv.classList.add('producto');
         productDiv.style.backgroundColor = '#FFFFFF';
-  
+
         productDiv.innerHTML = `
           <div class='product_card'>
             <img src='${producto.imagen}' class='tarjeta-img'>
@@ -26,15 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
             <button class='btn'>Agregar al carrito</button>
           </div>
         `;
-  
+
         productContainer.appendChild(productDiv);
-  
+
         const addButton = productDiv.querySelector('.btn');
-  
+
         addButton.addEventListener('click', () => {
           // agregamos el producto al carrito
           carrito.push(producto);
-  
+
           Swal.fire({
             title: `${producto.nombre}`,
             text: 'Se ha agregado al carrito.',
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
             timer: 1000,
             showConfirmButton: false,
           });
-  
+
           // guardamos el producto en el carrito
           guardarCarrito(carrito);
           mostrarCarrito();
@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error(err);
     }
   }
-  
+
   getProductsMeraki();
-  
+
 
   function guardarCarrito(carrito) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
@@ -72,34 +72,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  
-
   function mostrarCarrito() {
     const cartContainer = document.getElementById('modal-body');
     const carritoGuardado = localStorage.getItem('carrito');
-  
+
     let precioTotal = 0;
-  
+
     if (carritoGuardado) {
       const carritoParseado = JSON.parse(carritoGuardado);
       cartContainer.innerHTML = '';
-  
-        carritoParseado.forEach((producto, index) => {
-          const productDiv = document.createElement('div');
-          productDiv.className = 'text-center';
-          productDiv.innerHTML = `
+
+      carritoParseado.forEach((producto, index) => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'text-center';
+        productDiv.innerHTML = `
             <h1>${producto.nombre}</h1>
             <img width="100px" src="${producto.imagen}">
             <p>${producto.precio}</p>
             <button class='btn btn-eliminar' data-index="${index}">Eliminar producto</button>
             <hr>
           `;
-  
-          cartContainer.appendChild(productDiv);
-          precioTotal += producto.precio;
-        });
-      }
-    
+
+        cartContainer.appendChild(productDiv);
+        precioTotal += producto.precio;
+        console.log(precioTotal);
+      });
+    }
+
     const precioTotalElement = document.createElement('p');
     precioTotalElement.textContent = `Precio Total: ${precioTotal.toFixed(2)}`
     cartContainer.appendChild(precioTotalElement);
@@ -160,6 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
       mostrarMensajeCarritoVacio();
     } else {
       mostrarCarrito();
+      $('#exampleModal').modal('show');
     }
   });
 
@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
     carrito = [];
     guardarCarrito(carrito);
     mostrarCarrito();
+    $('#exampleModal').modal('hide');
     Swal.fire({
       icon: 'info',
       title: 'Carrito vaciado',
@@ -179,25 +180,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   const vaciarCarritoBtn = document.getElementById('vaciarCarritoBtn');
   vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
-  
-  const compraFinal = document.getElementById('finalizar_compra');
+
   compraFinal.addEventListener('click', () => {
+    vaciarCarrito();
     Swal.fire(
       'Compra realizada',
       'Gracias por elegir Meraki!',
       'success'
     )
-
-
+    $('#exampleModal').modal('hide');
   })
 });
-
-
-
-
-
-
-
-
-
-
