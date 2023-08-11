@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   let carrito = [];
+  let carritoStorage = JSON.parse(localStorage.getItem('carrito'));
 
   const productContainer = document.querySelector('#product_container_');
   const compraFinal = document.getElementById('finalizar_compra');
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (carritoGuardado) {
       const carritoParseado = JSON.parse(carritoGuardado);
       carritoParseado.splice(index, 1); // Eliminamos el producto del carrito usando splice
+
       guardarCarrito(carritoParseado); // Guardamos el carrito actualizado en el almacenamiento local
     }
   }
@@ -95,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         cartContainer.appendChild(productDiv);
         precioTotal += producto.precio;
-        console.log(precioTotal);
       });
     }
 
@@ -133,6 +134,8 @@ document.addEventListener('DOMContentLoaded', function () {
               'success'
             )
             eliminarProducto(index);
+            //  carrito = [];
+    guardarCarrito(carrito);
             mostrarCarrito(); // Actualizamos el carrito después de eliminar el producto
           } else if (
             result.dismiss === Swal.DismissReason.cancel
